@@ -12,6 +12,7 @@
   --accent-color: #2196f3;
   --primary-bg-color: #ffffff;
   --secondary-bg-color: #f5f4fa;
+  --thumb-bg: rgba(33, 150, 243, 0.9);
   --third-bg-color: #2f303a;
   --white-color: #ffffff;
   --black-logo: #000000;
@@ -123,6 +124,21 @@ a {
 
 .nav-link.active {
   color: var(--accent-color);
+  position: relative;
+}
+
+.nav-link.active::after {
+  position: absolute;
+
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px;
+
+  margin-top: 28px;
+
+  background-color: var(--accent-color);
+  border-radius: 2px;
 }
 
 /* Контакты в хедере */
@@ -389,6 +405,33 @@ a {
   flex-direction: calc(100% / 3 - var(--card-set-gap));
 }
 
+.do-thumb {
+  position: relative;
+}
+
+.do-text {
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+  height: 70px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(47, 48, 58, 0.8);
+  margin: 0;
+  padding: 0;
+
+  color: var(--white-color);
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+  text-align: center;
+}
+
 /* OUR TEAM SECTION */
 
 .team.container {
@@ -621,4 +664,46 @@ button:active {
   margin: 0;
   padding: 0;
   margin-top: 4px;
+}
+
+.thumb {
+  position: relative;
+}
+
+.thumb::before {
+  content: '';
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  background-color: var(--thumb-bg);
+  opacity: 0;
+}
+
+.exampl-el:hover .thumb::before {
+  opacity: 1;
+}
+
+.thumb-text {
+  position: absolute;
+
+  margin: 0;
+  padding: 63px 23px;
+
+  display: block;
+
+  top: 0;
+  left: 0;
+
+  color: var(--white-color);
+  font-size: 18px;
+  line-height: 1.56;
+  opacity: 0;
+}
+
+.exampl-el:hover .thumb-text {
+  opacity: 1;
 }
