@@ -80,7 +80,7 @@ a {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.backdrop.is-hiden {
+.backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
@@ -92,16 +92,33 @@ a {
   left: 50%;
   transform: translate(-50%, -50%);
 
-  width: 528px;
-  height: 581px;
+  display: flex;
+  padding-top: 8px;
+  padding-right: 8px;
+  min-width: 528px;
+  min-height: 581px;
   background-color: var(--white-color);
 }
 
-.modal button {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%);
+.modal-colse {
+  top: 0;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+  margin-left: auto;
+  background: var(--white-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}
+
+.modal-colse:hover,
+.modal-colse:active {
+  background-color: var(--accent-color);
 }
 
 /* HEADER */
@@ -618,11 +635,11 @@ a {
   margin-bottom: 50px;
 }
 
-.button:not(:first-child) {
+.buttons-item:not(:first-child) {
   margin-left: 8px;
 }
 
-button {
+.button {
   background-color: var(--secondary-bg-color);
   color: var(--primary-text-color);
 
@@ -637,9 +654,9 @@ button {
   border-radius: 4px;
 }
 
-button:hover,
-button:focus,
-button:active {
+.button:hover,
+.button:focus,
+.button:active {
   color: var(--white-color);
   background-color: var(--accent-color);
 
@@ -724,7 +741,8 @@ button:active {
   opacity: 0;
 }
 
-.exampl-el:hover .thumb::before {
+.example-link:hover .thumb::before,
+.example-link:focus .thumb::before {
   opacity: 1;
 }
 
@@ -745,6 +763,7 @@ button:active {
   opacity: 0;
 }
 
-.exampl-el:hover .thumb-text {
+.example-link:hover .thumb-text,
+.example-link:focus .thumb-text {
   opacity: 1;
 }
