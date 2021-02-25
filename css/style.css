@@ -92,17 +92,15 @@ a {
   left: 50%;
   transform: translate(-50%, -50%);
 
-  display: flex;
-  padding-top: 8px;
-  padding-right: 8px;
   min-width: 528px;
   min-height: 581px;
   background-color: var(--white-color);
 }
 
 .modal-colse {
-  top: 0;
-  right: 0;
+  position: absolute;
+  top: 8px;
+  right: 8px;
 
   display: flex;
   align-items: center;
@@ -394,6 +392,7 @@ a {
   padding: 10px 32px;
   border-radius: 4px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: 1px solid transparent;
 }
 
 /* FEATURES SECTION */
